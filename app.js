@@ -68,10 +68,12 @@ function formatDate(date) {
     return new Intl.DateTimeFormat('en-US').format(date);
 }
 
-// Initialize the app when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    new DevOpsDemo();
-});
+// Initialize the app when DOM is loaded (only in browser environment)
+if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', () => {
+        new DevOpsDemo();
+    });
+}
 
 // Export functions for testing (Node.js environment)
 if (typeof module !== 'undefined' && module.exports) {
