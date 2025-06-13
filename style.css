@@ -103,6 +103,18 @@ footer {
     opacity: 0.8;
 }
 
+.metrics {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.metrics strong {
+    color: #667eea;
+}
+
 #test-status {
     color: #28a745;
     font-weight: 500;
