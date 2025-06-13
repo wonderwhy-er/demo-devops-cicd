@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps CI/CD Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 DevOps CI/CD Demo</h1>
+            <p>Demonstrating GitHub Actions Workflows</p>
+        </header>
+        
+        <main>
+            <section class="feature-card">
+                <h2>✅ Continuous Integration</h2>
+                <p>Automated testing on every push and pull request</p>
+            </section>
+            
+            <section class="feature-card">
+                <h2>🔄 Continuous Deployment</h2>
+                <p>Automatic deployment to GitHub Pages on main branch</p>
+            </section>
+            
+            <section class="feature-card">
+                <h2>🧪 Test Coverage</h2>
+                <p id="test-status">Running automated tests...</p>
+            </section>
+            
+            <section class="stats">
+                <div class="stat">
+                    <span class="number" id="build-count">42</span>
+                    <span class="label">Builds</span>
+                </div>
+                <div class="stat">
+                    <span class="number" id="test-count">156</span>
+                    <span class="label">Tests Passed</span>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Last deployed: <span id="deploy-time"></span></p>
+        </footer>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>

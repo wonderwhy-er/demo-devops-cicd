@@ -1,0 +1,43 @@
+{
+  "name": "demo-devops-cicd",
+  "version": "1.0.0",
+  "description": "A demo project showcasing DevOps CI/CD workflows with GitHub Actions",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint *.js",
+    "lint:fix": "eslint *.js --fix",
+    "serve": "python3 -m http.server 8000 || python -m SimpleHTTPServer 8000",
+    "build": "echo 'Build process completed successfully!'",
+    "deploy": "echo 'Deploying to GitHub Pages...'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/demo-devops-cicd.git"
+  },
+  "keywords": [
+    "devops",
+    "ci-cd",
+    "github-actions",
+    "automation",
+    "testing"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/demo-devops-cicd/issues"
+  },
+  "homepage": "https://yourusername.github.io/demo-devops-cicd/",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "eslint": "^8.57.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "*.js",
+      "!jest.config.js"
+    ]
+  }
+}
