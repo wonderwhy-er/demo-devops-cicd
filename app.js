@@ -8,6 +8,7 @@ class DevOpsDemo {
         this.updateDeployTime();
         this.simulateTestStatus();
         this.animateCounters();
+        this.showPerformanceMetrics();
     }
 
     updateDeployTime() {
@@ -29,6 +30,18 @@ class DevOpsDemo {
         }, 2000);
     }
 
+    showPerformanceMetrics() {
+        const loadTimeElement = document.getElementById('load-time');
+        if (loadTimeElement) {
+            const loadTime = getPageLoadTime();
+            if (loadTime > 0) {
+                loadTimeElement.textContent = `${loadTime}ms`;
+            } else {
+                loadTimeElement.textContent = 'optimized ⚡';
+            }
+        }
+    }
+
     animateCounters() {
         this.animateCounter('build-count', 42);
         this.animateCounter('test-count', 156);
@@ -48,6 +61,27 @@ class DevOpsDemo {
             element.textContent = Math.floor(current);
         }, 50);
     }
+}
+
+// Performance metrics utility functions
+function measurePerformance(name, fn) {
+    const start = performance.now();
+    const result = fn();
+    const end = performance.now();
+    console.log(`Performance: ${name} took ${end - start} milliseconds`);
+    return result;
+}
+
+function getPageLoadTime() {
+    if (typeof performance !== 'undefined' && performance.timing) {
+        const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+        return loadTime;
+    }
+    return 0;
+}
+
+function calculateThroughput(operations, timeMs) {
+    return operations / (timeMs / 1000);
 }
 
 // Utility functions for testing
@@ -81,6 +115,9 @@ if (typeof module !== 'undefined' && module.exports) {
         add,
         multiply,
         validateEmail,
-        formatDate
+        formatDate,
+        measurePerformance,
+        getPageLoadTime,
+        calculateThroughput
     };
 }
